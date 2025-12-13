@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lavishly+Yours&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&family=Roboto:wght@100..900&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+header{
+    height: 50px;
+    width: 1200px;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    /* background-color: black; */
+    position: relative;
+    z-index: 1000;
+}
+header .logo{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+}
+header nav a{
+    margin-left: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+header nav a:hover,
+header nav a.active{
+    background-color: aqua;
+    border-radius: 2px;
+}
+.carousel{
+    height: 100vh;
+    width: 100vw;
+    margin-top: -50px;
+    overflow: hidden;
+    position: relative;
+}
+.carousel::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    background: linear-gradient(30deg, #03e0fd, #36ff03);
+}
+.carousel .list{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.carousel .list .item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    font-size: 17px;
+}
+.carousel .list .item img{
+    width: 17%;
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel .list .item .details{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item .intro{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 400px;
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(2) .intro{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s;
+}
+.carousel .list .item:nth-child(n+6){
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(2){
+    transform: translate(0,0);
+    filter: blur(0);
+    z-index: 10;
+    opacity: 1;
+}
+.carousel .list .item:nth-child(1){
+    transform: translate(-80%,-5%);
+    filter: blur(20px);
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(3){
+    transform: translate(50%,10%) scale(0.8);
+    filter: blur(5px);
+    z-index: 9;
+    opacity: 1;
+}
+.carousel .list .item:nth-child(4){
+    transform: translate(70%,15%) scale(0.6);
+    filter: blur(10px);
+    z-index: 8;
+    opacity: 1;
+}
+.carousel .list .item:nth-child(5){
+    transform: translate(100%,25%) scale(0.4);
+    filter: blur(20px);
+    z-index: 7;
+    opacity: 0;
+    pointer-events: none;
+}
+.arrows{
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+.arrows .prev, .arrows .next{
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background: #03e0fd;
+    font-weight: 900;
+    cursor: pointer;
+}
+.arrows .goback{
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+}
+.carousel .list .item .intro .name{
+    font-size: 3em;
+    font-weight: 500;
+    text-align: left;
+}
+.carousel .list .item .intro .title{
+    font-size: 1.5em;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+.carousel .list .item .intro .occupation{
+    margin-top: 25px;
+    font-size: 0.8em;
+}
+.carousel .list .item .intro .seemore{
+    border: none;
+    background: transparent;
+    padding: 0px 10px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.carousel .list .item:nth-child(2) .intro .name,
+.carousel .list .item:nth-child(2) .intro .title,
+.carousel .list .item:nth-child(2) .intro .occupation,
+.carousel .list .item:nth-child(2) .intro .seemore{
+    opacity: 0;
+    animation: showContent 0.5s 0.7s ease 1 forwards;
+}
+@keyframes showContent{
+    from{
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+.carousel .list .item:nth-child(2) .intro .title{
+    animation-delay: 0.9s;
+}
+.carousel .list .item:nth-child(2) .intro .occupation{
+    animation-delay: 1.1s;
+}
+.carousel .list .item:nth-child(2) .intro .seemore{
+    animation-delay: 1.3s;
+}
+.carousel.next .list .item:nth-child(1){
+    animation: item1 0.5s ease-in-out 1 forwards;
+}
+@keyframes item1{
+    from{
+        transform: translate(0,0);
+        filter: blur(0);
+        z-index: 10;
+        opacity: 1;
+    }
+}
+.carousel.next .list .item:nth-child(2){
+    animation: item2 0.7s ease-in-out 1 forwards;
+}
+@keyframes item2{
+    from{
+        transform: translate(50%,10%) scale(0.8);
+        filter: blur(5px);
+        z-index: 9;
+        opacity: 1;
+    }
+}
+.carousel.next .list .item:nth-child(3){
+    animation: item3 0.9s ease-in-out 1 forwards;
+}
+@keyframes item3{
+    from{
+        transform: translate(70%,15%) scale(0.6);
+        filter: blur(10px);
+        z-index: 8;
+        opacity: 1;
+    }
+}
+.carousel.next .list .item:nth-child(4){
+    animation: item4 1.1s ease-in-out 1 forwards;
+}
+@keyframes item4{
+    from{
+        transform: translate(100%,25%) scale(0.4);
+        filter: blur(20px);
+        z-index: 7;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+.carousel.prev .list .item:nth-child(2){
+    animation: prev1 0.5s ease-in-out 1 forwards;
+}
+@keyframes prev1{
+    from{
+        transform: translate(-80%,-5%);
+        filter: blur(20px);
+        z-index: 11;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+.carousel.prev .list .item:nth-child(3){
+    animation: prev2 0.7s ease-in-out 1 forwards;
+}
+@keyframes prev2{
+    from{
+        transform: translate(0,0);
+        filter: blur(0);
+        z-index: 10;
+        opacity: 1;
+    }
+}
+.carousel.prev .list .item:nth-child(4){
+    animation: prev3 0.9s ease-in-out 1 forwards;
+}
+@keyframes prev3{
+    from{
+        transform: translate(50%,10%) scale(0.8);
+        filter: blur(5px);
+        z-index: 9;
+        opacity: 1;
+    }
+}
+.carousel.prev .list .item:nth-child(5){
+    animation: prev4 1.1s ease-in-out 1 forwards;
+}
+@keyframes prev4{
+    from{
+        transform: translate(70%,15%) scale(0.6);
+        filter: blur(10px);
+        z-index: 8;
+        opacity: 1;
+    }
+}
+
+.carousel .list .item{
+    transition: left 0.5s ,opacity 0.5s;
+}
+
+.carousel.showDetails .list .item:nth-child(3),
+.carousel.showDetails .list .item:nth-child(4){
+    left: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel.showDetails .list .item:nth-child(2){
+    width: 100%;
+}
+.carousel.showDetails .list .item:nth-child(2) .intro{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel.showDetails .list .item:nth-child(2) img{
+    transition:left 1s, width 0.7s;
+}
+.carousel.showDetails .list .item:nth-child(2) img{
+    left: 10%;
+    width: 15%;
+}
+.carousel.showDetails .list .item:nth-child(2) .details{
+    opacity: 1;
+    pointer-events: auto;
+    position: absolute;
+    right: 10%;
+    width: 700px;
+    text-align: right;
+    top: 30%;
+}
+.carousel.showDetails .list .item:nth-child(2) .details .char{
+    font-size: 5vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    animation: showContent 0.7s ease 1 forwards;
+}
+.carousel.showDetails .list .item:nth-child(2) .details .apper{
+    font-size: 1em;
+    animation: showContent  0.9s ease 1 forwards; 
+}
+.carousel.showDetails .list .item:nth-child(2) .details .personality{
+    font-size: 1em;
+    margin: 20px 0px;  
+    animation: showContent  1.1s ease 1 forwards;
+}

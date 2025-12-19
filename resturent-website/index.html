@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Elegance</div>
+        <nav>
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#gallery">gallery</a>
+            <a href="#reserve">reserve</a>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Elegance</h1>
+        <h3>Where culinary art meets refined taste</h3>
+        <div id="button">
+            <a href="">Reserve a Table</a>
+        </div>
+    </section>
+    <section id="about">
+        <h2>our story</h2>
+        <h4>A legacy of flavors</h4>
+        <p>Founded in the heart of the city, our restaurant brings together the finest ingredients and masterful techniques. We believe in creating unforgettable dining experiences that celebrate both tradition and innovation. Every dish tells a story, crafted with passion and served with elegance.</p>
+    </section>
+    <section id="menu">
+        <h2>our menu</h2>
+        <p>Curated culinary excellence</p>
+        <div class="buttons">
+            <button class="active">All</button>
+            <button>Starters</button>
+            <button>Main Course</button>
+            <button>Desserts</button>
+        </div>
+        <div class="menu-area">
+        </div>
+    </section>
+    <section id="gallery">
+        <h2>our gallery</h2>
+        <p>Visual Journey Through Luxury</p>
+        <div class="gallery-area">
+            <div class="gallery-item">
+                <img src="https://elpueblomex.com/wp-content/uploads/2023/09/fresh-mexican-food-1080x628.jpg" alt="">
+                <div class="item">fresh cuisine</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.papiwines.com/cdn/shop/articles/your-go-to-wine-sweetness-chart-wines-from-dry-to-sweet-784056.jpg?v=1709173121" alt="">
+                <div class="item">fine wines</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/originals/36/a4/b6/36a4b6dac81d5fcc6bddef4037fb20d2.jpg" alt="">
+                <div class="item">artisan desserts</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaILmf6eMVPicGj-emaoi_99wVB3luIiAStA&s" alt="">
+                <div class="item">master chefs</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-PDLGs1WcUtBrSkXDOY7mwn2D-9vaVpLHBA&s" alt="">
+                <div class="item">elegant ambiance</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/FOOD_CATALOG/IMAGES/CMS/2025/9/26/75bc9dc6-641b-4996-a5d0-9d03deb2e107_e6dab316-b827-444d-9b4a-f56f6530ba2e.jpg" alt="">
+                <div class="item">premium cuts</div>
+            </div>
+        </div>
+    </section>
+    <section id="reserve">
+        <h2>reserve a table</h2>
+        <p>Secure Your Culinary Experience</p>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Email Address" required>
+            <input type="text" placeholder="Phone Number" required>
+            <div class="date" >
+                <input type="date" required>
+                <span>Date</span>
+            </div>
+            <div class="time date">
+                <input type="time" required>
+                <span>Time</span>
+            </div>
+            <select>Select Number of Guests
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5 Guests</option>
+                <option>6+ Guests</option>
+            </select>
+            <textarea placeholder="Special Request (Optional)"></textarea>
+            <button>Confirm Reservation</button>
+        </form>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

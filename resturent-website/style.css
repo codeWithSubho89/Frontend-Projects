@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lavishly+Yours&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&family=Roboto:wght@100..900&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 70px;
+    width: 100%;
+    background: transparent;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+}
+header .logo{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.8em;
+    color: #D4AF37;
+}
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+}
+header nav a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+    position: relative;
+    transition: all 1s;
+    padding: 2px 0px;
+    overflow: hidden;
+}
+header nav a:hover{
+    color: #D4AF37;
+    scale: 0.9;
+}
+
+header nav a::before{
+    content:'';
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    background: #D4AF37;
+    z-index: 100;
+    transition: 0.5s;
+}
+header nav a:hover::before {
+    left: 0;
+}
+
+/* home styling*/
+
+#home{
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(#29231A,#1B1713);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    color: #D4AF37;
+}
+#home h3{
+    font-size: 1.7vw;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: #fff;
+}
+
+#home #button{
+    height: 50px;
+    width: 250px;
+    background: #D4AF37;
+    border-radius: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 5px 5px 50px #fad86971;
+}
+#home #button a{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #000;
+    font-family: 'Poppins';
+    position: relative;
+}
+#home #button:hover{
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 50px #fad869;
+}
+#home #button a::after{
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+#home #button a:hover::after{
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+}
+
+#about{
+    height: 50vh;
+    width:100% ;
+    background: #1A1612;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#about h2{
+    padding-top: 6vw;
+    font-size: 4.5rem;
+    text-transform: capitalize;
+    color: #D4AF37;
+    font-weight: 400;
+}
+#about h4{
+    color: #fff;
+    font-family: cursive;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 20px 0px;
+}
+#about p{
+    color: #fff;
+    width: 60%;
+    text-align: center;
+    font-size: large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 70px;
+}
+#menu{
+    min-height: 70vh;
+    width: 100%;
+    background: #1A1612;
+    color: #fff;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+#menu h2{ 
+    padding-top: 120px;
+    font-size: 3.5vw;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #D4AF37;
+}
+#menu p{
+    font-size: 1.3rem;
+}
+#menu .buttons{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}
+#menu .buttons button{
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: 2px solid #D4AF37;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0px 10px 30px #ddce9e67;
+    transition: all 0.5s;
+}
+
+#menu .buttons button:hover,
+#menu .buttons button.active{
+    background: #D4AF37;
+    color: #000;
+}
+
+#menu .menu-area{
+    width: 100%;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+#menu .menu-area .menu-card{
+    border: 1px solid #d4af377c;
+    padding: 20px;
+    border-radius: 10px;
+    transition:all 0.5s;
+}
+#menu .menu-area .menu-card h3{
+    font-size: 30px;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+#menu .menu-area .menu-card span{
+    font-size: 1.2rem;
+    color: #D4AF37;
+}
+#menu .menu-area .menu-card p{
+    font-size: 1rem;
+    margin-top: 20px;
+}
+#menu .menu-area .menu-card:hover{
+    scale: 1.05;
+    box-shadow: 0px 10px 50px #d4af37a9;
+    border-color: #D4AF37;
+}
+#gallery{
+    min-height: 100vh;
+    width:100%;
+    background: #1A1612;
+    padding: 0px 50px;
+}
+#gallery h2{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 4vw;
+    font-weight: 500;
+    color: #D4AF37;
+}
+#gallery p{
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1VW;
+    text-transform: capitalize;
+}
+#gallery .gallery-area{
+    width: 100%;
+    padding: 10px;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    gap: 30px;
+}
+#gallery .gallery-area .gallery-item{
+    height: 20vw;
+    width: 20vw;
+    /* border: 1px solid #fff; */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    animation: blink 1s linear infinite;
+}
+@keyframes blink{
+    50%{
+        box-shadow: 5px 0px 50px #D4AF37;
+    }
+}
+#gallery .gallery-area .gallery-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#gallery .gallery-area .gallery-item  .item{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+    backdrop-filter: blur(10px);
+    text-transform: capitalize;
+    color: #1900f7;
+    font-weight: 900;
+    opacity: 0;
+    transition: all 0.3s ;
+}
+#gallery .gallery-area .gallery-item:hover .item{
+    opacity: 1;
+}
+
+#reserve{
+    height: 100vh;
+    width: 100%;
+    background: #1A1612;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#reserve h2{
+    font-size: 4vw;
+    color: #D4AF37;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+#reserve p{
+    font-size: 1.6vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+}
+#reserve form{
+    width: 550px;
+    max-width: 100%;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    backdrop-filter: blur(30px);
+    padding: 40px;
+}
+#reserve form input{
+    width: 80%;
+    height: 40px;
+    flex-grow: 1;
+    outline: none;
+    padding: 10px;
+    background: black;
+    border: none;
+    color: #fff;
+    border: 1px solid #D4AF37;
+}
+#reserve form input::placeholder{
+    color: #ffffff8f;
+}
+#reserve .date{
+    width: 80%;
+    height: 40px;
+    position: relative;
+}
+#reserve .date input{
+    width: 100%;
+}
+#reserve .date span{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    color: #D4AF37;
+    background: #1A1612;
+}
+#reserve select{
+    width: 80%;
+    height: 40px;
+    flex-grow: 1;
+    outline: none;
+    padding: 10px;
+    background: black;
+    border: none;
+    color: #fff;
+    border: 1px solid #D4AF37;
+}
+#reserve textarea{
+    width: 80%;
+    height: 100px;
+    flex-grow: 1;
+    outline: none;
+    padding: 10px;
+    background: black;
+    border: none;
+    color: #fff;
+    border: 1px solid #D4AF37;
+}
+
+#reserve button{
+    padding: 10px 20px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    background: #D4AF37;
+}
+#reserve button:hover{
+    background: #ac9f75;
+}
+
+/* =======================
+   RESPONSIVE DESIGN
+======================= */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+    header {
+        padding: 0 30px;
+    }
+
+    #home h1 {
+        font-size: 10vw;
+        text-align: center;
+    }
+
+    #home h3 {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    #about h2 {
+        font-size: 3rem;
+    }
+
+    #about p {
+        width: 80%;
+        font-size: 1rem;
+        margin-top: 40px;
+    }
+
+    #menu h2 {
+        font-size: 5vw;
+    }
+
+    #menu .menu-area {
+        grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    }
+
+    #gallery h2 {
+        font-size: 5vw;
+    }
+
+    #gallery p {
+        font-size: 1.5vw;
+    }
+
+    #gallery .gallery-area .gallery-item {
+        height: 28vw;
+        width: 28vw;
+    }
+
+    #reserve h2 {
+        font-size: 5vw;
+    }
+
+    #reserve p {
+        font-size: 2.5vw;
+        text-align: center;
+    }
+}
+
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    header nav {
+        gap: 15px;
+    }
+
+    header nav a {
+        font-size: 1rem;
+    }
+
+    #home h1 {
+        font-size: 12vw;
+    }
+
+    #home h3 {
+        font-size: 4vw;
+    }
+
+    #home #button {
+        width: 200px;
+        height: 45px;
+    }
+
+    #about {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    #about h2 {
+        font-size: 2.5rem;
+    }
+
+    #about p {
+        width: 90%;
+        font-size: 0.95rem;
+    }
+
+    #menu {
+        padding: 0 20px;
+    }
+
+    #menu h2 {
+        font-size: 6vw;
+    }
+
+    #menu p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #menu .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #menu .menu-area {
+        grid-template-columns: 1fr;
+    }
+
+    #gallery {
+        padding: 0 20px;
+    }
+
+    #gallery .gallery-area {
+        justify-content: center;
+    }
+
+    #gallery .gallery-area .gallery-item {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    #gallery .gallery-area .gallery-item .item {
+        font-size: 6vw;
+    }
+
+    #reserve {
+        padding: 50px 20px;
+    }
+
+    #reserve h2 {
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    #reserve p {
+        font-size: 3.5vw;
+        text-align: center;
+    }
+
+    #reserve form {
+        width: 100%;
+        padding: 30px 20px;
+    }
+}
+
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+
+    header  {
+        display: none;
+    }
+
+
+    #home h1 {
+        font-size: 14vw;
+    }
+
+    #home h3 {
+        font-size: 4.5vw;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #menu h2,
+    #gallery h2,
+    #reserve h2 {
+        font-size: 7vw;
+    }
+
+    #reserve p {
+        font-size: 4vw;
+    }
+}
